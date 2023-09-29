@@ -1,70 +1,53 @@
 #include <iostream>
+#include <limits>
+#include <set>
 
 using namespace std;
 
 int main() {
-    int an;
-    bool bissextile = false;
+    set<int> dossards; // Utiliser un ensemble pour stocker les dossards déjà saisis
+    int dossard, dossardVainqueur = 0, dossardDeuxieme = 0;
+    double temps, meilleurTemps = numeric_limits<double>::max(), deuxiemeMeilleurTemps = numeric_limits<double>::max();
 
-    // Saisie de l'année
-    cout << "Entrez une annee : ";
-    cin >> an;
+    while (true) {
+        cout << "Entrez le dossard du skieur (0 pour terminer la saisie) : ";
+        cin >> dossard;
 
-    // Vérifier si l'année est bissextile
-    bissextile = ((an % 400 == 0) || ((an % 4 == 0) && (an % 100 != 0)));
-
-    if (bissextile) {
-        cout << "L'annee est bissextile" << endl;
-    } else {
-        cout << "L'annee n'est pas bissextile" << endl;
-    }
-
-    // Déterminer si un mois a 31 jours (par exemple, mois de janvier)
-    int mois = 1; // 1 représente janvier
-    // Saisie du mois
-    cout << "Entrez un mois : ";
-    cin >> mois;
-    bool moisDe31Jours = (mois >= 1 && mois <= 12) && (mois == 1 || mois == 3 || mois == 5 || mois == 7 || mois == 8 || mois == 10 || mois == 12);
-
-    if (moisDe31Jours) {
-        cout << "Le mois a 31 jours" << endl;
-    } else {
-        cout << "Le mois n'a pas 31 jours" << endl;
-    }
-
-    // Tester la validité d'une date (date saisie) et calculer la date du lendemain
-    int jour, mois2, an2;
-    cout << "Entrez une date (jour mois annee) : ";
-    cin >> jour >> mois2 >> an2;
-
-    bool dateValide = true;
-    int joursParMois[] = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31}; // Jours dans chaque mois
-
-    if (an2 % 400 == 0 || (an2 % 4 == 0 && an2 % 100 != 0)) {
-        joursParMois[2] = 29; // Février a 29 jours en année bissextile
-    }
-
-    if (mois2 < 1 || mois2 > 12 || jour < 1 || jour > joursParMois[mois2]) {
-        dateValide = false;
-    }
-
-    if (dateValide) {
-        // Calculer la date du lendemain
-        if (jour < joursParMois[mois2]) {
-            jour++;
-        } else {
-            jour = 1;
-            if (mois2 < 12) {
-                mois2++;
-            } else {
-                mois2 = 1;
-                an2++;
-            }
+        // Vérifier si la saisie est valide
+        if (dossard == 0) {
+            break; // Sortir de la boucle si le dossard est 0
+        } else if (dossard < 1) {
+            cout << "Erreur de saisie : Le dossard doit être un entier positif. Réessayez." << endl;
+            cin.clear(); // Effacer les erreurs de saisie précédentes
+            cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Ignorer le reste de la ligne incorrecte
+            continue; // Reprendre la saisie
+        } else if (dossards.count(dossard) > 0) {
+            cout << "Erreur de saisie : Le dossard " << dossard << " a déjà été saisi. Réessayez." << endl;
+            continue; // Reprendre la saisie
         }
 
-        cout << "Date valide. Date du lendemain : " << jour << "/" << mois2 << "/" << an2 << endl;
+        dossards.insert(dossard); // Ajouter le dossard à l'ensemble
+
+        cout << "Entrez le temps du skieur #" << dossard << " (en minutes) : ";
+        cin >> temps;
+
+        if (temps < meilleurTemps) {
+            deuxiemeMeilleurTemps = meilleurTemps;
+            dossardDeuxieme = dossardVainqueur;
+            meilleurTemps = temps;
+            dossardVainqueur = dossard;
+        } else if (temps < deuxiemeMeilleurTemps && temps != meilleurTemps) {
+            deuxiemeMeilleurTemps = temps;
+            dossardDeuxieme = dossard;
+        }
+    }
+
+    cout << "Le vainqueur est le skieur #" << dossardVainqueur << " avec un temps de " << meilleurTemps << " minutes." << endl;
+
+    if (dossardDeuxieme != 0) {
+        cout << "Le skieur ayant réalisé le deuxième meilleur temps est le skieur #" << dossardDeuxieme << " avec un temps de " << deuxiemeMeilleurTemps << " minutes." << endl;
     } else {
-        cout << "Date invalide." << endl;
+        cout << "Il n'y a pas de skieur avec le deuxième meilleur temps." << endl;
     }
 
     return 0;
