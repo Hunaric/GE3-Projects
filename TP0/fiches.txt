@@ -1,0 +1,28 @@
+Antivirus :
+Nom de l'Application : Avast Antivirus
+
+Description en français :
+Avast Antivirus est une solution de sécurité informatique de renom qui protège votre ordinateur contre les menaces en ligne telles que les virus, les logiciels malveillants, les ransomwares et les attaques de phishing. Il propose une analyse en temps réel, des mises à jour automatiques de la base de données de virus et une fonction de pare-feu intégrée pour protéger votre vie privée en ligne.
+
+Description en anglais :
+Avast Antivirus is a renowned computer security solution that safeguards your computer against online threats such as viruses, malware, ransomware, and phishing attacks. It offers real-time scanning, automatic updates of the virus database, and an integrated firewall feature to protect your online privacy.
+
+Gestion du personnel des entreprises :
+Nom de l'Application : BambooHR
+
+Description en français :
+BambooHR est une application de gestion des ressources humaines conçue pour simplifier la gestion du personnel au sein des entreprises. Elle offre des fonctionnalités telles que la gestion des dossiers des employés, le suivi des congés et des absences, la gestion des performances, et la planification des horaires. BambooHR aide les entreprises à optimiser leur gestion des ressources humaines de manière efficace et collaborative.
+
+Description en anglais :
+BambooHR is a human resources management application designed to streamline personnel management within companies. It offers features such as employee record management, leave and absence tracking, performance management, and scheduling. BambooHR helps businesses optimize their human resources management efficiently and collaboratively.
+
+Gestion comptable des entreprises :
+Nom de l'Application : QuickBooks
+
+Description en français :
+QuickBooks est une application de gestion comptable populaire destinée aux entreprises de toutes tailles. Elle permet de suivre les finances de l'entreprise, de gérer les factures, les dépenses, la paie, et de générer des rapports financiers détaillés. QuickBooks simplifie la comptabilité en automatisant de nombreuses tâches et en offrant une visibilité en temps réel sur la santé financière de l'entreprise.
+
+Description en anglais :
+QuickBooks is a popular accounting management application designed for businesses of all sizes. It allows for tracking the company's finances, managing invoices, expenses, payroll, and generating detailed financial reports. QuickBooks simplifies accounting by automating many tasks and providing real-time visibility into the financial health of the business.
+
+N'oubliez pas de personnaliser ces fiches techniques en fonction des fonctionnalités spécifiques de chaque application et des besoins potentiels de vos clients lors de la vente.
