@@ -28,6 +28,7 @@ int main() {
             deuxiemeMeilleurTemps = meilleurTemps;
             dossardDeuxieme = dossardVainqueur;
             meilleurTemps = temps;
+            // y
             dossardVainqueur = dossard;
         } else if (temps < deuxiemeMeilleurTemps && temps != meilleurTemps) {
             deuxiemeMeilleurTemps = temps;
